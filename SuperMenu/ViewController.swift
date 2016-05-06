@@ -88,7 +88,7 @@ class ViewController: UIViewController,SuperMenuDelegate,SuperMenuDataSource {
     
     func menu(menu: SuperMenu, imageForItemsInRowAtIndexPath indexPath: LbkIndexPath) -> NSString {
         if indexPath.column == 0 && indexPath.item >= 0 {
-            return "baidu"
+            return "baidu@2x.png"
         }
         return ""
     }

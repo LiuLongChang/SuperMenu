@@ -466,17 +466,13 @@ class SuperMenu: UIView,UITableViewDelegate,UITableViewDataSource {
                 
                 let str =  dataSource?.menu(self, titleForRowAtIndexPath: LbkIndexPath.indexPathWithColumn(currentSelectedColumn!, row: indexPath.row))
                 
-                
-                
                 cell?.textLabel?.text = String(str!)
-                
-                
                 
                 if dataSourceFlag.imageNameForRowAtIndexPath != 0 {
                     
                     let imgName = dataSource?.menu(self, imageNameForRowAtIndexPath: LbkIndexPath.indexPathWithColumn(currentSelectedColumn!, row: indexPath.row))
-                    if imgName != nil && imgName?.length > 0 {
-                        cell?.imageView?.image = UIImage(named: String(imgName))
+                    if imgName != nil && imgName!.length > 0 {
+                        cell?.imageView?.image = UIImage(named: String(imgName!))
                     }else{
                         cell?.imageView?.image = nil
                     }
@@ -526,8 +522,11 @@ class SuperMenu: UIView,UITableViewDelegate,UITableViewDataSource {
                 if dataSourceFlag.imageNameForItemInRowAtIndexPath != 0 {
                     
                     let imgName = dataSource?.menu(self, imageForItemsInRowAtIndexPath: LbkIndexPath.indexPathWithColumn(currentSelectedColumn!, row: currentSelectedRow, item: indexPath.row))
-                    if imgName != nil && imgName?.length > 0 {
-                        cell?.imageView?.image = UIImage(named: String(imgName))
+                    
+                    
+                    
+                    if imgName != nil && imgName!.length > 0 {
+                        cell?.imageView?.image = UIImage(named: String(imgName!))
                     }else{
                         cell?.imageView?.image = nil
                     }
